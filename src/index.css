@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  padding: 40px 20px 20px 40px;
+  min-height: calc(100vh - 140px);
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  padding: 20px;
+  transition: background-color 0.3s;
+  z-index: 1100;
+}
+
+.sidebar a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.sidebar a:hover {
+  color: #F59E0B;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px 20px 20px 40px;
+  min-height: calc(100vh - 140px);
+  width: calc(100% - 250px);
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 10px 20px;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  left: 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-left: 0;
+  z-index: 1000;
+}
+
+.dark-mode {
+  background-color: #1A202C;
+}
+
+.dark-mode .sidebar {
+  background-color: #2D3748;
+}
+
+.dark-mode .sidebar a {
+  color: #E2E8F0;
+}
+
+.dark-mode .content,
+.dark-mode .app-container {
+  background-color: #1A202C;
+  color: #F7FAFC; /* Updated to match StyledPaper and theme */
+}
+
+.dark-mode .header {
+  background-color: #2D3748;
+  color: #F7FAFC;
+}
+
+.dark-mode .footer {
+  background-color: #2D3748;
+  color: #F7FAFC;
+}
