@@ -1,12 +1,40 @@
-# React + Vite
+# Recruitment Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The Recruitment Management System is a web-based application designed to streamline the recruitment process for organizations. Built with React and Material-UI, this project allows users to manage candidate screening, view dashboards with key metrics, and configure settings. It features a responsive design, dark mode support, and a modular structure to handle candidate data efficiently. This system is ideal for HR teams or small businesses looking to automate and organize their hiring workflows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Candidate Screening**: Input and evaluate candidate details (name, qualifications, experience) with automated suitability checks.
+- **Dashboard**: View key recruitment metrics like total candidates, active jobs, scheduled interviews, and hires.
+- **Settings**: Customize application preferences, including dark mode, and view developer details in a modal.
+- **Responsive Design**: Works seamlessly across devices with a modern UI.
+- **Dark Mode**: Toggle between light and dark themes for better usability.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Prerequisites
+
+Before running the project, ensure you have the following installed on your machine:
+
+- **Node.js**: Version 18.x or higher (includes npm).
+- **Git**: For cloning the repository.
+- **Text Editor**: Visual Studio Code or any preferred editor.
+
+To check if Node.js and npm are installed, run the following commands in your terminal:
+
+```bash
+node --version
+npm --version
+
+
+Installation and Setup
+
+git clone https://github.com/PossibleIlesanmi/RECRUITMENT-MANAGEMENT-SYSTEM-FRONTEND.git
+
+cd Recruitment-Management-System/client
+npm install
+
+
+Start the Development Server
+
+npm run dev
