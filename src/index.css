@@ -58,15 +58,15 @@ body {
 }
 
 .footer {
-  text-align: center;
-  padding: 10px 20px;
+  padding-left: 310px;
+  /* padding: 10px 20px; */
   background-color: #1E3A8A;
   color: #FFFFFF;
-  width: 100%;
+  width: calc(100% - 250px);
   position: fixed;
   bottom: 0;
-  margin-left: 0;
   z-index: 1000;
+  /* margin-left: 50px; */
 }
 
 .dark-mode {

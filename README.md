@@ -38,3 +38,23 @@ npm install
 Start the Development Server
 
 npm run dev
+
+ContributingWe welcome contributions to enhance this project! To contribute:Fork the repository.
+Create a new branch: git checkout -b feature-name.
+Make your changes and commit: git commit -m "Add feature-name".
+Push to your fork: git push origin feature-name.
+Open a pull request on GitHub.
+
+Please ensure your code follows the existing style and includes necessary updates to this README.
+
+
+
+CreditsDeveloped by: Ilesanmi Gbenga Possible
+Portfolio: https://github.com/PossibleIlesanmi
+Socials:LinkedIn: https://www.linkedin.com/in/ilesanmi-gbenga-possible-238107241
+Facebook: https://web.facebook.com/profile.php?id=100071514043019
+GitHub: https://github.com/PossibleIlesanmi
+
+AcknowledgmentsInspired by modern HR management needs.
+Built with guidance from online resources and community support.
+
