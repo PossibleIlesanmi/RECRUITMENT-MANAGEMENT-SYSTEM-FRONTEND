@@ -7,12 +7,13 @@ body {
 }
 
 .app-container {
-  padding: 40px 20px 20px 40px;
-  min-height: calc(100vh - 140px);
+  padding: 20px;
+  min-height: 100vh;
   transition: background-color 0.3s;
-  width: 100%;
-  box-sizing: border-box;
+  display: block; /* ✅ Remove flex center alignment */
 }
+
+
 
 .sidebar {
   width: 250px;
@@ -21,7 +22,7 @@ body {
   background-color: #1E3A8A;
   color: #FFFFFF;
   padding: 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s ease;
   z-index: 1100;
 }
 
@@ -58,16 +59,18 @@ body {
 }
 
 .footer {
-  padding-left: 310px;
-  /* padding: 10px 20px; */
   background-color: #1E3A8A;
   color: #FFFFFF;
-  width: calc(100% - 250px);
+  width: 100%;
   position: fixed;
   bottom: 0;
+  left: 0; /* ✅ Ensures it touches left edge */
   z-index: 1000;
-  /* margin-left: 50px; */
+  text-align: center;
+  padding: 10px 0;
 }
+
+
 
 .dark-mode {
   background-color: #1A202C;
@@ -84,7 +87,7 @@ body {
 .dark-mode .content,
 .dark-mode .app-container {
   background-color: #1A202C;
-  color: #F7FAFC; /* Updated to match StyledPaper and theme */
+  color: #F7FAFC;
 }
 
 .dark-mode .header {
@@ -95,4 +98,30 @@ body {
 .dark-mode .footer {
   background-color: #2D3748;
   color: #F7FAFC;
+}
+
+
+/* 📱 Mobile view adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    transform: translateX(-200px);
+    position: fixed;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .footer {
+    padding-left: 0;
+    width: 100%;
+    text-align: center;
+  }
 }

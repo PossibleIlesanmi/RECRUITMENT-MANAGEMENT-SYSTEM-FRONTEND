@@ -3,9 +3,11 @@ import { Typography, TextField, Button, Box, Grid, Paper } from '@mui/material';
 import { styled } from '@mui/system';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
-  marginTop: theme.spacing(2),
+  padding: theme.spacing(3),
+  marginTop: theme.spacing(3),
+  borderRadius: 12,
   backgroundColor: theme.palette.mode === 'dark' ? '#2D3748' : '#FFFFFF',
+  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
 }));
 
 const CandidateScreening = () => {
@@ -16,25 +18,47 @@ const CandidateScreening = () => {
   });
   const [screeningResult, setScreeningResult] = useState(null);
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate screening logic
-    const result = formData.experience >= 3 && formData.qualifications.includes('Degree')
-      ? 'Suitable'
-      : 'Not Suitable';
+    const result =
+      formData.experience >= 3 &&
+      formData.qualifications.toLowerCase().includes('degree')
+        ? 'Suitable'
+        : 'Not Suitable';
     setScreeningResult({ ...formData, result });
   };
 
   return (
-    <Box className="app-container" sx={{ padding: 2 }}>
-      <Typography variant="h4" gutterBottom color={theme => theme.palette.primary.main} fontWeight="bold">
+    <Box
+      sx={{
+        padding: 3,
+        maxWidth: '900px',
+        margin: '0 auto',
+        paddingTop: '80px', // Space for header
+        paddingBottom: '60px', // Space for footer
+      }}
+    >
+      <Typography
+        variant="h4"
+        gutterBottom
+        sx={{
+          fontWeight: 'bold',
+          color: (theme) => theme.palette.primary.main,
+        }}
+      >
         Candidate Screening
       </Typography>
-      <Typography paragraph color={theme => theme.palette.primary.main}>
+      <Typography
+        paragraph
+        sx={{ color: (theme) => theme.palette.text.secondary }}
+      >
         Enter candidate details to evaluate suitability.
       </Typography>
-      <form onSubmit={handleSubmit}>
+
+      <StyledPaper component="form" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -68,21 +92,45 @@ const CandidateScreening = () => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained" color="primary" type="submit" sx={{ mt: 2 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              sx={{ mt: 1 }}
+              fullWidth
+            >
               Screen Candidate
             </Button>
           </Grid>
         </Grid>
-      </form>
+      </StyledPaper>
+
       {screeningResult && (
         <StyledPaper>
-          <Typography variant="h6" color={theme => theme.palette.secondary.main}>
+          <Typography
+            variant="h6"
+            sx={{ color: (theme) => theme.palette.secondary.main }}
+          >
             Screening Result
           </Typography>
           <Typography>Name: {screeningResult.name}</Typography>
-          <Typography>Qualifications: {screeningResult.qualifications}</Typography>
-          <Typography>Experience: {screeningResult.experience} years</Typography>
-          <Typography variant="h6" color={screeningResult.result === 'Suitable' ? theme => theme.palette.success.main : '#EF4444'}>
+          <Typography>
+            Qualifications: {screeningResult.qualifications}
+          </Typography>
+          <Typography>
+            Experience: {screeningResult.experience} years
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mt: 1,
+              fontWeight: 'bold',
+              color:
+                screeningResult.result === 'Suitable'
+                  ? (theme) => theme.palette.success.main
+                  : '#EF4444',
+            }}
+          >
             Status: {screeningResult.result}
           </Typography>
         </StyledPaper>
