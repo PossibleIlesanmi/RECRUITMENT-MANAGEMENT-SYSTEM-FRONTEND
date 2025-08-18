@@ -16,8 +16,6 @@ body {
   align-items: center;
 }
 
-
-
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -27,6 +25,8 @@ body {
   padding: 20px;
   transition: background-color 0.3s, transform 0.3s ease;
   z-index: 1100;
+  left: 0;
+  top: 0;
 }
 
 .sidebar a {
@@ -67,14 +67,13 @@ body {
   width: 100%;
   position: fixed;
   bottom: 0;
-  left: 0; /* ✅ Ensures it touches left edge */
+  left: 0;
   z-index: 1000;
   text-align: center;
   padding: 10px 0;
 }
 
-
-
+/* Dark Mode */
 .dark-mode {
   background-color: #1A202C;
 }
@@ -103,28 +102,97 @@ body {
   color: #F7FAFC;
 }
 
+/* ------------------ Responsive Enhancements ------------------ */
 
-/* 📱 Mobile view adjustments */
-@media (max-width: 768px) {
+/* Tablet & Below */
+@media (max-width: 1024px) {
   .sidebar {
     width: 200px;
-    transform: translateX(-200px);
+  }
+  .content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+    transform: translateX(-220px); /* hidden by default */
     position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
   }
 
   .sidebar.open {
-    transform: translateX(0);
+    transform: translateX(0); /* slides in when open */
   }
 
   .content {
     margin-left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 70px 15px 50px; /* space for header/footer */
   }
 
+  .header,
   .footer {
-    padding-left: 0;
-    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
     text-align: center;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+  .content {
+    padding: 60px 12px 40px;
+  }
+  .sidebar {
+    width: 200px;
+    transform: translateX(-200px);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .header {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+  .footer {
+    font-size: 0.85rem;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 350px) {
+  body {
+    font-size: 14px;
+  }
+  .content {
+    padding: 55px 10px 35px;
+  }
+  .sidebar {
+    width: 180px;
+    transform: translateX(-180px);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 320px) {
+  body {
+    font-size: 13px;
+  }
+  .header {
+    font-size: 0.9rem;
+  }
+  .footer {
+    font-size: 0.8rem;
   }
 }
